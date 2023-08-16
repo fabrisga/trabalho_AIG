@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 
-openai.api_key = 'sua-chave-openai'
+openai.api_key = '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'
 
 st.title('OpenAI Chatbot')
 
