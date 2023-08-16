@@ -1,42 +1,28 @@
 import streamlit as st
+import openai
 
-from chatgpt_library import ChatGPT # Importando a biblioteca fictícia
+openai.api_key = 'sua-chave-openai'
+
+st.title('OpenAI Chatbot')
+
+user_input = st.text_input('Digite sua pergunta')
+
+if st.button('Enviar'):
+    persona = "Você é um chatbot de psicologia. Responda de modo cômico para as pessoas que buscam por ajuda."
+    instructions = f"{persona}\nUsuário: {user_input}\nChatbot:"
+
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=instructions,
+        max_tokens=200
+    )
+
+    st.text(response.choices[0].text.strip())
+
 
  
 
-# Inicializando a classe ou função com a chave da API
-
-chatgpt_instance = ChatGPT(api_key="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")
-
- 
-
-st.title("ChatGPT Interface")
-
- 
-
-user_input = st.text_input("Digite sua mensagem:")
-
- 
-
-if st.button("Enviar"):
-
-    if user_input:
-
-        # Fazendo a chamada à API através da biblioteca
-
-        response = chatgpt_instance.query(user_input)
-
- 
-
-        # Exibindo a resposta
-
-        st.write("Resposta do ChatGPT:", response)
-
-    else:
-
-        st.write("Por favor, digite uma mensagem.")
 
 
 
 
-streamlit run app.py
