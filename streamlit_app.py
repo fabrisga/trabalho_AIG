@@ -6,7 +6,7 @@ from chatgpt_library import ChatGPT # Importando a biblioteca fictícia
 
 # Inicializando a classe ou função com a chave da API
 
-chatgpt_instance = ChatGPT(api_key="xxxxxxxx")
+chatgpt_instance = ChatGPT(api_key="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")
 
  
 
@@ -39,3 +39,4 @@ if st.button("Enviar"):
 
 
 
+streamlit run app.py
