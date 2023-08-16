@@ -18,11 +18,3 @@ if st.button('Enviar'):
     )
 
     st.text(response.choices[0].text.strip())
-
-
- 
-
-
-
-
-
