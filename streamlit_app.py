@@ -39,4 +39,3 @@ if st.button("Enviar"):
 
 
 
-streamlit run app.py
